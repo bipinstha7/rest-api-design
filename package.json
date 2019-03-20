@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/bipinstha7/rest-api-design/issues"
   },
-  "homepage": "https://github.com/bipinstha7/rest-api-design#readme"
+  "homepage": "https://github.com/bipinstha7/rest-api-design#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19"
+  }
 }
