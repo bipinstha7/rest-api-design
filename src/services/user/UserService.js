@@ -25,7 +25,28 @@ class UserService {
 		return this._extractFields(user, fields)
 	}
 
-	
+	async updateUser(useId, firstName, lastName) {
+		const user = await this.UserModel.findById(userId)
+		if (firstName) user.firstName = firstName
+		if (lastName) user.lastName = lastName
+		return user.save()
+
+		// OR: another method
+
+		// const payload = {
+		//     firstName,
+		//     lastName
+		// }
+
+		// const user = await this.UserModel.findByIdAndUpdate(userId, payload)
+		// return user
+	}
+
+	async deletUser(userId) {
+		const user = await this.UserModel.findById(userId)
+		user.delete = true
+		return user.save()
+	}
 
 	_extractFields(user, fields) {
 		if (!fields.length) return user
