@@ -29,6 +29,32 @@ app.post(
 	})
 )
 
+// Two different approaches to handle custom commands
+// # 1
+app.post(
+	'api/v1/users/:userId',
+	catchException(async (req, res) => {
+		const { command } = req.query
+
+		switch (command) {
+			case 'send-email':
+				// TODO: Send email to user
+				return res.json({ message: 'Email sent' })
+			default:
+				return res.json({ message: `${command} is not a valid command` })
+		}
+	})
+)
+
+// # 2
+app.post(
+	'/api/v1/users/:userId/send-email',
+	catchException(async (req, res) => {
+		// TODO: Send email to user
+		res.json({ message: 'Email sent' })
+	})
+)
+
 
 
 app.use((error, req, res, next) => {
