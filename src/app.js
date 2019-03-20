@@ -55,6 +55,18 @@ app.post(
 	})
 )
 
+app.get(
+	'/api/v1/users/:userId',
+	catchException(async (req, res) => {
+		const { userId } = req.params
+		let { fields } = req.query
+		fields = fields ? fields.split(',') : undefined
+
+		const user = await userService.getUser(userId, fields)
+		res.json(user)
+	})
+)
+
 
 
 app.use((error, req, res, next) => {
