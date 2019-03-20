@@ -20,6 +20,15 @@ app.get(
 	})
 )
 
+app.post(
+	'/api/v1/users',
+	catchException(async (req, res) => {
+		const { firstName, lastName } = req.body
+		const user = await userService.createUser(firstName, lastName)
+		res.json(user)
+	})
+)
+
 
 
 app.use((error, req, res, next) => {
