@@ -67,7 +67,25 @@ app.get(
 	})
 )
 
+app.put(
+	'/api/v1/users/:userId',
+	catchException(async (req, res) => {
+		const { userId } = req.params
+		const { firstName, lastName } = req.body
 
+		const user = await userService.updateUser(userId, firstName, lastName)
+		res.json(user)
+	})
+)
+
+app.delete(
+	'/api/v1/users/:userId',
+	catchException(async (req, res) => {
+		const { userId } = req.params
+		const user = await userService.deleteUser(userId)
+		res.json(user)
+	})
+)
 
 app.use((error, req, res, next) => {
 	console.error('error', error)
