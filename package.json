@@ -1,0 +1,19 @@
+{
+  "name": "rest-api-design",
+  "version": "1.0.0",
+  "description": "Rest API Design Pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bipinstha7/rest-api-design.git"
+  },
+  "author": "Bipin Shrestha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bipinstha7/rest-api-design/issues"
+  },
+  "homepage": "https://github.com/bipinstha7/rest-api-design#readme"
+}
