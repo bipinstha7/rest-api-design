@@ -48,6 +48,7 @@ class UserService {
 		return user.save()
 	}
 
+	// it acts like select in mongoose
 	_extractFields(user, fields) {
 		if (!fields.length) return user
 
