@@ -25,7 +25,7 @@ class UserService {
 		return this._extractFields(user, fields)
 	}
 
-	async updateUser(useId, firstName, lastName) {
+	async updateUser(userId, firstName, lastName) {
 		const user = await this.UserModel.findById(userId)
 		if (firstName) user.firstName = firstName
 		if (lastName) user.lastName = lastName
