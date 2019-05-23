@@ -9,7 +9,7 @@ module.exports = function makeContactList(ContactModel) {
 		add,
 		// findByEmail,
 		findById,
-		// getItems,
+		getItems,
 		// remove,
 		// replace,
 		// update,
