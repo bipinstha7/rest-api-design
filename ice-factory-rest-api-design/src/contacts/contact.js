@@ -40,14 +40,14 @@ module.exports = function makeContact(
 		if (!isValidEmail(emailAddress)) {
 			throw new InvalidPropertyError('Invalid contact email address.')
 		}
+	}
 
-		function normalize({ email, firstName, lastName, ...otherInfo }) {
-			return {
-				...otherInfo,
-				firstName: upperFirst(firstName),
-				lastName: upperFirst(lastName),
-				email: email.toLowerCase(),
-			}
+	function normalize({ email, firstName, lastName, ...otherInfo }) {
+		return {
+			...otherInfo,
+			firstName: upperFirst(firstName),
+			lastName: upperFirst(lastName),
+			email: email.toLowerCase(),
 		}
 	}
 }
