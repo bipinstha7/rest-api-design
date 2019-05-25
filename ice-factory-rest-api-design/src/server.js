@@ -27,8 +27,7 @@ function contactsController(req, res) {
 	const httpRequest = adpatRequest(req)
 	handleContactRequest(httpRequest)
 		.then(({ headers, statusCode, data }) =>
-			res
-				.set(headers)
+			res.set(headers)
 				.status(statusCode)
 				.send(data)
 		)
