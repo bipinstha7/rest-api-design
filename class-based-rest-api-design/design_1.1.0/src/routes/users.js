@@ -8,8 +8,7 @@ const attachCurrentUser = require('../middlewares/attachCurrentUser')
 const checkRole = require('../middlewares/checkRole')
 
 router.post('/login', async (req, res) => {
-	const email = req.body.user.email
-	const password = req.body.user.password
+	const { email, password } = req.body.user
 
 	try {
 		const authServiceInstance = new AuthService(UserModel)
