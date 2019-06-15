@@ -9,6 +9,8 @@ const ItemModel = require('../models/item')
 router.get('/', isAuth, attachCurrentUser, async (req, res) => {
 	try {
 		const user = req.currentUser
+
+		// dependency injection ItemModel
 		const itemsServiceInstance = new ItemsService(ItemModel)
 
 		const items = await itemsServiceInstance.getMyItems(user)
