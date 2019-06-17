@@ -25,6 +25,8 @@ class AuthService {
 				email: userRecord.email,
 				name: userRecord.name,
 			},
+
+			// start private function with underscore(_)
 			token: this._generateJWT(userRecord),
 		}
 	}
