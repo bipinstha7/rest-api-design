@@ -21,7 +21,7 @@ router.post('/login', async (req, res) => {
 
 router.post('/login-as', isAuth, attachCurrentUser, checkRole('admin'), async (req, res) => {
 	try {
-		const email = req.body.user.email
+		const { email } = req.body.user
 		const authServiceInstance = new AuthService(UserModel)
 		const { user, token } = await authServiceInstance.loginAs(email)
 		res.status(200).json({ user, token })
