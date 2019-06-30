@@ -1,4 +1,4 @@
-class ItemsService {
+class ItemService {
 	constructor(ItemModel) {
 		this.ItemModel = ItemModel
 	}
@@ -39,3 +39,5 @@ class ItemsService {
 		return this.ItemModel.remove({ _id: itemId, owner: user._id })
 	}
 }
+
+module.exports = ItemService
