@@ -1,0 +1,1 @@
+You need to dev.js file inside config folder which holds the environmental variables.
